@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RIVO: Risk-Elimination GTM Strategy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-[#030712] text-slate-100 font-sans antialiased overflow-hidden select-none">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const slides = [
+      {
+        id: "title",
+        title: "RIVO: RISK-ELIMINATION GTM STRATEGY",
+        subtitle: "Executive CEO Presentation & Technical Prototype",
+        type: "hero",
+        content: {
+          badge: "Zero-Burn Execution Model",
+          heading: "Hypothesis-Driven 90-Day Plan",
+          subheading: "A startup's first 90 days are not about building 15 features. They are about systematically eliminating the 15 biggest uncertainties.",
+          pills: [
+            { label: "Core Wedge", val: "1 Financial MRI" },
+            { label: "User Interviews", val: "240 Live Sessions" },
+            { label: "Validation Gates", val: "4 Hard Gates" }
+          ]
+        }
+      },
+      {
+        id: "thesis",
+        title: "1. Market Thesis & Behavioral Target",
+        subtitle: "The Decision Intelligence Vacuum",
+        type: "grid",
+        cols: [
+          {
+            title: "The Market Gap",
+            tag: "SYSTEMIC OPPORTUNITY",
+            items: [
+              "India Solved Access, Not Decisions: UPI solved payments; Zerodha & CRED solved access. Urban Indians hold 3+ cards & 3 accounts, causing severe financial fragmentation.",
+              "Rivo's Original Position: Not a dashboard. Rivo is an un-incentivized ambient intelligence layer that stops silent leaks before they happen."
+            ]
+          },
+          {
+            title: "Behavioral Target: Complacent Techie",
+            tag: "PRIMARY ICP",
+            highlight: true,
+            items: [
+              "Demographics: SDE-2/3s & PMs (Age 24–35, ₹15L–₹40L PA).",
+              "Mindset: Financially confident, owns multiple cards, but unknowingly bleeds money to defaults.",
+              "Core Friction: Refuses manual budgeting, but despises being quietly taken advantage of by bank fees or HR tax templates."
+            ]
+          }
+        ]
+      },
+      {
+        id: "prioritization",
+        title: "2. Founder Bandwidth & Tiered Prioritization",
+        subtitle: "Resource Allocation Matrix",
+        type: "tiers",
+        tiers: [
+          {
+            badge: "Tier 1: Critical",
+            share: "80% Bandwidth",
+            badgeColor: "emerald",
+            title: "The Core Wedge (Financial MRI)",
+            desc: "Single diagnostic tool that discovers all major leaks in <3 minutes.",
+            items: ["1 Landing Page & Position Harness", "WASM Browser Statement Parser", "20 Live User Interviews / Week"]
+          },
+          {
+            badge: "Tier 2: Testing",
+            share: "20% Bandwidth",
+            badgeColor: "amber",
+            title: "Support Assets",
+            desc: "Built only if Tier 1 passes validation gates.",
+            items: ["Basic Referral Link Mechanism", "Anonymized Peer Benchmark Display", "CTC & Card Mis-Swipe Intercepts"]
+          },
+          {
+            badge: "Tier 3: Frozen",
+            share: "0% Bandwidth",
+            badgeColor: "rose",
+            title: "The Backlog",
+            desc: "Explicitly frozen until 1,000 WAO is achieved.",
+            items: ["Lounge Access Checker", "EMI Analyzer / Travel FX Tool", "FD Arbitrage / Loan Calculators"]
+          }
+        ]
+      },
+      {
+        id: "roadmap",
+        title: "3. Hypothesis-Driven 90-Day Execution Roadmap",
+        subtitle: "Weekly Risk Elimination Cycle",
+        type: "table",
+        rows: [
+          { phase: "Phase 1 (W1–W3)", risk: "Desirability Risk ('Do they care?')", exp: "Test 3 messaging hooks (Loss vs System Anger vs Intelligence) + 20 interviews/wk.", target: "Landing Conversion > 25%\nMRI Completion > 60%" },
+          { phase: "Phase 2 (W4–W6)", risk: "Distribution Risk ('Where are they?')", exp: "Seed MRI across Slack, Reddit, WhatsApp, & LinkedIn. Kill bottom 80%.", target: "1 Repeatable $0 Channel\nEffort Velocity > 20/hr" },
+          { phase: "Phase 3 (W7–W9)", risk: "Trust & Retention ('Will they stay?')", exp: "Test salary/event re-engagement triggers + 3-tier local privacy ladder.", target: "7-Day Return (WAO) > 25%\nLocal Data Opt-In > 30%" },
+          { phase: "Phase 4 (W10–W12)", risk: "Scalability & Virality ('Will they invite?')", exp: "Test 'Invisible Tax Receipts' and corporate leak teardown challenges.", target: "Viral Coefficient (K) > 0.5\n10,000 Verified Waitlist" }
+        ]
+      },
+      {
+        id: "gates",
+        title: "4. Validation Gates & Decision Criteria",
+        subtitle: "Data-Driven Kill Triggers",
+        type: "gates",
+        gates: [
+          { step: "GATE 01", title: "Landing Conversion", target: ">25% Conversion to MRI", fail: "STOP CODE. Rewrite messaging hooks; do not build tools." },
+          { step: "GATE 02", title: "MRI Completion", target: ">60% Completion Rate", fail: "STOP UX. Audit is too complex; cut fields down to 3 inputs." },
+          { step: "GATE 03", title: "7-Day Active Return", target: ">25% Weekly Return (WAO)", fail: "PIVOT UTILITY. Product is a one-time gimmick; fix core loop." },
+          { step: "GATE 04", title: "Viral K-Factor", target: "K > 0.5 Coefficient", fail: "DO NOT SCALE. Reframe social status cues before onboarding." }
+        ]
+      },
+      {
+        id: "kpi",
+        title: "5. North Star KPI Architecture",
+        subtitle: "Single Operational Hierarchy",
+        type: "kpi",
+        northStar: {
+          title: "Weekly Active Optimizers (WAO)",
+          sub: "Users completing ≥1 meaningful financial optimization per week"
+        },
+        metrics: [
+          { label: "Activation", val: ">50%", desc: "Audit Completion Rate" },
+          { label: "Retention & Trust", val: ">40%", desc: "Local Data Opt-in Rate" },
+          { label: "Viral Referral", val: ">0.5", desc: "Viral Coefficient (K)" }
+        ]
+      }
+    ];
+
+    function App() {
+      const [currentSlide, setCurrentSlide] = useState(0);
+      const [activeGate, setActiveGate] = useState(0);
+
+      useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (e.key === "ArrowRight" || e.key === "Space") {
+            setCurrentSlide((prev) => Math.min(prev + 1, slides.length - 1));
+          } else if (e.key === "ArrowLeft") {
+            setCurrentSlide((prev) => Math.max(prev - 1, 0));
+          }
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+      }, []);
+
+      const slide = slides[currentSlide];
+
+      return (
+        <div className="flex flex-col h-screen w-screen bg-[#030712] text-slate-100 font-sans overflow-hidden select-none antialiased">
+          {/* Progress Bar */}
+          <div className="w-full bg-slate-900/80 h-1 flex">
+            {slides.map((_, idx) => (
+              <div
+                key={idx}
+                className={`h-full transition-all duration-500 flex-1 ${
+                  idx === currentSlide
+                    ? "bg-emerald-400 shadow-[0_0_12px_#34d399]"
+                    : idx < currentSlide
+                    ? "bg-emerald-800/60"
+                    : "bg-slate-800/40"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Header */}
+          <header className="px-12 pt-6 pb-4 flex justify-between items-center border-b border-slate-800/60 backdrop-blur-md">
+            <div className="flex items-center space-x-4">
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981] animate-pulse" />
+              <div>
+                <h2 className="text-xl font-bold text-white tracking-tight leading-none">{slide.title}</h2>
+                <p className="text-[11px] uppercase tracking-widest text-emerald-400 font-semibold mt-1">{slide.subtitle}</p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-3">
+              <span className="text-xs text-slate-500 font-mono tracking-wide">CONFIDENTIAL • EXECUTIVE BRIEFING</span>
+              <span className="px-3 py-1 text-[11px] font-bold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                Interactive System
+              </span>
+            </div>
+          </header>
+
+          {/* Main Content */}
+          <main className="flex-1 px-12 py-6 flex flex-col justify-center relative overflow-hidden">
+            {slide.type === "hero" && (
+              <div className="flex flex-col items-center justify-center text-center space-y-8 max-w-4xl mx-auto">
+                <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">{slide.content.badge}</span>
+                </div>
+                
+                <h1 className="text-5xl font-black text-white tracking-tight leading-tight">
+                  {slide.content.heading}
+                </h1>
+                
+                <p className="text-base text-slate-400 leading-relaxed max-w-2xl font-normal">
+                  {slide.content.subheading}
+                </p>
+
+                <div className="grid grid-cols-3 gap-4 w-full pt-4">
+                  {slide.content.pills.map((pill, i) => (
+                    <div key={i} className="bg-slate-900/80 border border-slate-800 p-4 rounded-xl text-center backdrop-blur-sm">
+                      <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{pill.label}</span>
+                      <p className="text-sm font-bold text-emerald-400 mt-1">{pill.val}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {slide.type === "grid" && (
+              <div className="grid grid-cols-2 gap-6 h-full items-stretch">
+                {slide.cols.map((col, idx) => (
+                  <div
+                    key={idx}
+                    className={`p-7 rounded-2xl border flex flex-col justify-start transition-all duration-300 ${
+                      col.highlight
+                        ? "bg-gradient-to-b from-slate-900/90 to-emerald-950/20 border-emerald-500/40 shadow-[0_0_30px_rgba(16,185,129,0.06)]"
+                        : "bg-slate-900/40 border-slate-800/80"
+                    }`}
+                  >
+                    <div className="flex justify-between items-center mb-5">
+                      <h3 className="text-lg font-bold text-white">{col.title}</h3>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 font-semibold">{col.tag}</span>
+                    </div>
+                    
+                    <ul className="space-y-4">
+                      {col.items.map((item, i) => (
+                        <li key={i} className="text-xs text-slate-300 leading-relaxed flex items-start space-x-3">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {slide.type === "tiers" && (
+              <div className="grid grid-cols-3 gap-6 h-full items-stretch">
+                {slide.tiers.map((tier, idx) => (
+                  <div
+                    key={idx}
+                    className={`p-6 rounded-2xl border flex flex-col justify-between transition-all duration-300 ${
+                      tier.badgeColor === "emerald"
+                        ? "bg-slate-900/90 border-emerald-500/50 shadow-[0_0_25px_rgba(16,185,129,0.1)]"
+                        : tier.badgeColor === "amber"
+                        ? "bg-slate-900/50 border-amber-500/30"
+                        : "bg-slate-900/20 border-rose-500/20 opacity-75"
+                    }`}
+                  >
+                    <div>
+                      <div className="flex justify-between items-center mb-4">
+                        <span className={`text-[10px] font-extrabold px-2.5 py-1 rounded-md border uppercase tracking-wider ${
+                          tier.badgeColor === "emerald" ? "bg-emerald-500/10 border-emerald-500/40 text-emerald-400" :
+                          tier.badgeColor === "amber" ? "bg-amber-500/10 border-amber-500/40 text-amber-400" :
+                          "bg-rose-500/10 border-rose-500/40 text-rose-400"
+                        }`}>
+                          {tier.badge}
+                        </span>
+                        <span className="text-xs font-mono font-bold text-slate-400">{tier.share}</span>
+                      </div>
+
+                      <h3 className="text-base font-bold text-white mb-1">{tier.title}</h3>
+                      <p className="text-xs text-slate-400 mb-4">{tier.desc}</p>
+                      
+                      <div className="border-t border-slate-800/80 pt-4 space-y-2.5">
+                        {tier.items.map((item, i) => (
+                          <div key={i} className="text-xs text-slate-300 flex items-center space-x-2">
+                            <span className="text-slate-600 font-bold">›</span>
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {slide.type === "table" && (
+              <div className="w-full bg-slate-900/40 border border-slate-800/80 rounded-2xl overflow-hidden backdrop-blur-sm">
+                <table className="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr className="bg-slate-900/90 border-b border-slate-800 text-emerald-400 font-semibold tracking-wider">
+                      <th className="p-4 font-mono">PHASE & TIMELINE</th>
+                      <th className="p-4 font-mono">EXISTENTIAL RISK</th>
+                      <th className="p-4 font-mono">EXPERIMENT CADENCE</th>
+                      <th className="p-4 font-mono">LEARNING TARGET</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-800/60 text-slate-300">
+                    {slide.rows.map((row, idx) => (
+                      <tr key={idx} className="hover:bg-slate-800/30 transition">
+                        <td className="p-4 font-bold text-white whitespace-nowrap">{row.phase}</td>
+                        <td className="p-4 font-medium text-emerald-300/90">{row.risk}</td>
+                        <td className="p-4 leading-relaxed text-slate-400">{row.exp}</td>
+                        <td className="p-4 font-mono text-emerald-400 whitespace-pre-line font-medium">{row.target}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            {slide.type === "gates" && (
+              <div className="flex flex-col space-y-6">
+                <div className="grid grid-cols-4 gap-4">
+                  {slide.gates.map((g, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveGate(idx)}
+                      className={`p-5 rounded-2xl border text-left transition-all ${
+                        activeGate === idx
+                          ? "bg-slate-900 border-emerald-500 shadow-[0_0_20px_rgba(16,185,129,0.15)]"
+                          : "bg-slate-900/30 border-slate-800 hover:border-slate-700"
+                      }`}
+                    >
+                      <span className="text-[10px] font-mono font-bold text-emerald-400">{g.step}</span>
+                      <p className="text-sm font-bold text-white mt-1 leading-snug">{g.title}</p>
+                    </button>
+                  ))}
+                </div>
+                
+                <div className="bg-slate-900/80 border border-slate-800 p-8 rounded-2xl flex justify-between items-center backdrop-blur-md">
+                  <div>
+                    <span className="text-[10px] text-emerald-400 font-mono font-bold uppercase tracking-widest">SUCCESS TARGET THRESHOLD</span>
+                    <h4 className="text-3xl font-black text-white mt-1">{slide.gates[activeGate].target}</h4>
+                  </div>
+                  <div className="bg-rose-950/20 border border-rose-500/30 p-5 rounded-xl max-w-md">
+                    <span className="text-[10px] text-rose-400 font-mono font-bold uppercase tracking-widest">MANDATORY KILL TRIGGER</span>
+                    <p className="text-xs font-semibold text-slate-200 mt-1.5 leading-relaxed">{slide.gates[activeGate].fail}</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {slide.type === "kpi" && (
+              <div className="flex flex-col items-center justify-center space-y-8">
+                <div className="bg-gradient-to-b from-slate-900 to-emerald-950/40 border border-emerald-500/60 p-8 rounded-3xl text-center max-w-lg w-full shadow-[0_0_40px_rgba(16,185,129,0.12)]">
+                  <span className="text-[10px] font-mono font-extrabold text-emerald-400 uppercase tracking-widest">NORTH STAR METRIC</span>
+                  <h2 className="text-3xl font-black text-white my-2">{slide.northStar.title}</h2>
+                  <p className="text-xs text-slate-400">{slide.northStar.sub}</p>
+                </div>
+
+                <div className="grid grid-cols-3 gap-6 w-full max-w-3xl">
+                  {slide.metrics.map((m, idx) => (
+                    <div key={idx} className="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl text-center">
+                      <p className="text-[11px] font-mono font-bold text-emerald-400 mb-1 uppercase tracking-wider">{m.label}</p>
+                      <p className="text-3xl font-black text-white my-1">{m.val}</p>
+                      <p className="text-xs text-slate-400">{m.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </main>
+
+          {/* Footer */}
+          <footer className="px-12 py-4 border-t border-slate-800/60 flex justify-between items-center bg-slate-950">
+            <span className="text-xs text-slate-500 font-mono">
+              SLIDE <strong className="text-slate-200">{currentSlide + 1}</strong> / {slides.length}
+            </span>
+
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={() => setCurrentSlide((p) => Math.max(p - 1, 0))}
+                disabled={currentSlide === 0}
+                className="px-4 py-2 bg-slate-900 border border-slate-800 text-xs font-bold rounded-xl disabled:opacity-30 hover:border-emerald-500 hover:text-emerald-400 transition"
+              >
+                ← Prev
+              </button>
+              <button
+                onClick={() => setCurrentSlide((p) => Math.min(p + 1, slides.length - 1))}
+                disabled={currentSlide === slides.length - 1}
+                className="px-5 py-2 bg-emerald-500 text-slate-950 text-xs font-black rounded-xl disabled:opacity-30 hover:bg-emerald-400 transition shadow-[0_0_15px_rgba(16,185,129,0.25)]"
+              >
+                Next →
+              </button>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
